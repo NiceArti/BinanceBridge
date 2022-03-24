@@ -10,7 +10,7 @@ task("redeem-bsc", "sends tokens in amount sended from other chain")
 .addParam("tokenB", "token address to receive")
 .addParam("amount", "amount of tokens")
 .addParam("nonce", "random number")
-.addParam("chainIdTo", "chain id from what to receive tokens")
+.addParam("chainIdFrom", "chain id from what to receive tokens")
 .addParam("chainIdTo", "chain id from what to receive tokens")
 .setAction(async function (taskArguments, hre) {
     const contract = await hre.ethers.getContractAt("BinanceBridge", BSC_DEPLOYED_CONTRACT);

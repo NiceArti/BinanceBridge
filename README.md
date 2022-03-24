@@ -25,6 +25,6 @@ Binance testnet faucet [link](https://testnet.bscscan.com/address/0x8d1f920b7b94
 
 | Task | Description |
 | --- | --- |
-| `npx hardhat swap-{eth/bsc} --token some_address --amount some_amount --nonce some_value --chain-id-to chain --network kovan` | swaps token from one chain to other |
-| `npx hardhat redeem-{eth/bsc} --token some_address --amount some_amount --nonce some_value --chain-id-to chain --network kovan` | swaps token from one chain to other |
+| `npx hardhat swap-{eth/bsc} --token some_address --amount some_amount --nonce some_value --chain-id-to chain --network {kovan/testnet}` | swaps token from one chain to other |
+| `npx hardhat redeem-{eth/bsc} --account some_acc --tokenA some_address --tokenB some_address --amount some_amount --nonce some_value --chain-id-from chain --chain-id-to chain --network {kovan/testnet}` | sends tokens in amount sended from other chain |
 
