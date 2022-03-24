@@ -1,46 +1,30 @@
-# Advanced Sample Hardhat Project
+# Binance Bridge contract
 
-This project demonstrates an advanced Hardhat use case, integrating other tools commonly used alongside Hardhat in the ecosystem.
 
-The project comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts. It also comes with a variety of other tools, preconfigured to work with the project code.
+- Link to deployed contract ETH: [link](https://kovan.etherscan.io/address/0x3e336089d22d3F94b5baf92Ee80f2CD80f52a92A)
+- Link to deployed contract BSC: [link](https://testnet.bscscan.com/address/0x7f0aE063d9a50b27773EbEEe82f1CCB03a2e3329)
+- Contract address ETH: 0x3e336089d22d3F94b5baf92Ee80f2CD80f52a92A
+- Contract address BSC: 0x7f0aE063d9a50b27773EbEEe82f1CCB03a2e3329
 
-Try running some of the following tasks:
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-npx hardhat help
-REPORT_GAS=true npx hardhat test
-npx hardhat coverage
-npx hardhat run scripts/deploy.ts
-TS_NODE_FILES=true npx ts-node scripts/deploy.ts
-npx eslint '**/*.{js,ts}'
-npx eslint '**/*.{js,ts}' --fix
-npx prettier '**/*.{json,sol,md}' --check
-npx prettier '**/*.{json,sol,md}' --write
-npx solhint 'contracts/**/*.sol'
-npx solhint 'contracts/**/*.sol' --fix
-```
+## Faucet token Kovan
 
-# Etherscan verification
+Kovan testnet faucet [link](https://kovan.etherscan.io/address/0xcCdCB921F474E9abfA760961a271656F00b5a1b0#code)
 
-To try out Etherscan verification, you first need to deploy a contract to an Ethereum network that's supported by Etherscan, such as Ropsten.
 
-In this project, copy the .env.example file to a file named .env, and then edit it to fill in the details. Enter your Etherscan API key, your Ropsten node URL (eg from Alchemy), and the private key of the account which will send the deployment transaction. With a valid .env file in place, first deploy your contract:
+## Faucet token Binance Testnet
 
-```shell
-hardhat run --network ropsten scripts/sample-script.ts
-```
+Binance testnet faucet [link](https://testnet.bscscan.com/address/0x8d1f920b7b94dB9F783818360c2e19273E862A87#code)
 
-Then, copy the deployment address and paste it in to replace `DEPLOYED_CONTRACT_ADDRESS` in this command:
 
-```shell
-npx hardhat verify --network ropsten DEPLOYED_CONTRACT_ADDRESS "Hello, Hardhat!"
-```
+- OpenZeppelin library: [link](https://github.com/OpenZeppelin/openzeppelin-contracts)
 
-# Performance optimizations
 
-For faster runs of your tests and scripts, consider skipping ts-node's type checking by setting the environment variable `TS_NODE_TRANSPILE_ONLY` to `1` in hardhat's environment. For more details see [the documentation](https://hardhat.org/guides/typescript.html#performance-optimizations).
+
+## Try running some of the following tasks:
+
+| Task | Description |
+| --- | --- |
+| `npx hardhat swap-{eth/bsc} --token some_address --amount some_amount --nonce some_value --chain-id-to chain --network kovan` | swaps token from one chain to other |
+| `npx hardhat redeem-{eth/bsc} --token some_address --amount some_amount --nonce some_value --chain-id-to chain --network kovan` | swaps token from one chain to other |
+

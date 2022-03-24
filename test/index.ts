@@ -46,7 +46,6 @@ describe("BinanceBridge", function () {
 
     it("redeem: Should return tokens when call redeem", async () => 
     {
-      let key: string = await helper.keygen(token.address, owner.address, TRANSFER_AMOUNT, 1, chainID, chainID)
       let message: ContractTransaction = await instance.swap(token.address, TRANSFER_AMOUNT, 1, chainID)
 
       // create message
@@ -59,7 +58,7 @@ describe("BinanceBridge", function () {
 
       let Initialize = helper.Initialize(token.address,token2.address,owner.address,r, s, v)
       let balanceBefore: BigNumber = await token.balanceOf(owner.address)
-      await instance.redeem(key, Initialize)
+      await instance.redeem(Initialize)
       let balanceAfter: BigNumber = await token.balanceOf(owner.address)
 
       expect(balanceBefore).to.equal(balanceAfter.sub(TRANSFER_AMOUNT))
@@ -67,7 +66,6 @@ describe("BinanceBridge", function () {
 
     it("redeem: Should fail when call redeem twice", async () =>
     {
-      let key = await helper.keygen(token.address, owner.address, TRANSFER_AMOUNT, 1, chainID, chainID)
       let message: ContractTransaction = await instance.swap(token.address, TRANSFER_AMOUNT, 1, chainID)
 
       // create message
@@ -80,13 +78,12 @@ describe("BinanceBridge", function () {
 
       let Initialize = helper.Initialize(token.address,token2.address,owner.address,r, s, v)
 
-      await instance.redeem(key, Initialize)
-      expect(instance.redeem(key, Initialize)).to.be.revertedWith("BinanceBridge: not initialized")
+      await instance.redeem(Initialize)
+      expect(instance.redeem(Initialize)).to.be.revertedWith("BinanceBridge: not initialized")
     })
 
     it("redeem: Should fail caller is not owner", async () =>
     {
-      let key = await helper.keygen(token.address, owner.address, 20, 1, chainID, chainID)
       let message: ContractTransaction = await instance.swap(token.address, TRANSFER_AMOUNT, 1, chainID)
 
       // create message
@@ -99,7 +96,7 @@ describe("BinanceBridge", function () {
 
       let Initialize = helper.Initialize(token.address,token2.address,owner.address,r, s, v)
 
-      expect(instance.connect(acc1).redeem(key, Initialize)).to.be.revertedWith("BinanceBridge: not a caller")
+      expect(instance.connect(acc1).redeem(Initialize)).to.be.revertedWith("BinanceBridge: not a caller")
     })
   })
 

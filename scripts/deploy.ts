@@ -9,10 +9,12 @@ async function main() {
 
   // await bridge.deployed();
 
-  const Token = await ethers.getContractFactory("Token")
-  const token = await Token.deploy()
+  const Token = await ethers.getContractFactory("Token");
+  const bridge = await Token.deploy();
 
-  console.log("Contract deployed to:", token.address);
+  await bridge.deployed();
+
+  console.log("Contract deployed to:", bridge.address);
 }
 
 main().catch((error) => {

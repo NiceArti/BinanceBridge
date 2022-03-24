@@ -41,12 +41,11 @@ contract BinanceBridge is IBinanceBridge, Ownable
     
 
 
-    function redeem(bytes32 key, InitAuthorization calldata init) external
+    function redeem(InitAuthorization calldata init) external
     {
         (bool status, string memory err) = _verify(init);
         require(status == true, err);
 
-        _initialization[key][msg.sender].status = Status.NOT_INITIALIZED;
         IERC20(init.tokenA).safeTransfer(msg.sender, init.amount);
     }
 
