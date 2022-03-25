@@ -1,20 +1,20 @@
 # Binance Bridge contract
 
 
-- Link to deployed contract ETH: [link](https://kovan.etherscan.io/address/0x3e336089d22d3F94b5baf92Ee80f2CD80f52a92A)
-- Link to deployed contract BSC: [link](https://testnet.bscscan.com/address/0x7f0aE063d9a50b27773EbEEe82f1CCB03a2e3329)
-- Contract address ETH: 0x3e336089d22d3F94b5baf92Ee80f2CD80f52a92A
-- Contract address BSC: 0x7f0aE063d9a50b27773EbEEe82f1CCB03a2e3329
+- Link to deployed contract ETH: [link](https://kovan.etherscan.io/address/0x9Ef0b2389621158EA2691ff597b68e3D38B93aB2)
+- Link to deployed contract BSC: [link](https://testnet.bscscan.com/address/0x36140E9fc2185df80Dc07f123b8C83f81b61ad17)
+- Contract address ETH: 0xF1d92f1A54865bbc012a6b77C32A94dCcB26eD43
+- Contract address BSC: 0x29b610AB8AF49C4Df30882e0Ec01aB11F6051f8f
 
 
 ## Faucet token Kovan
 
-Kovan testnet faucet [link](https://kovan.etherscan.io/address/0xcCdCB921F474E9abfA760961a271656F00b5a1b0#code)
+Kovan testnet faucet [link](https://kovan.etherscan.io/address/0xF1d92f1A54865bbc012a6b77C32A94dCcB26eD43#code)
 
 
 ## Faucet token Binance Testnet
 
-Binance testnet faucet [link](https://testnet.bscscan.com/address/0x8d1f920b7b94dB9F783818360c2e19273E862A87#code)
+Binance testnet faucet [link](https://testnet.bscscan.com/address/0x29b610AB8AF49C4Df30882e0Ec01aB11F6051f8f#code)
 
 
 - OpenZeppelin library: [link](https://github.com/OpenZeppelin/openzeppelin-contracts)
