@@ -43,6 +43,7 @@ contract BinanceBridge is IBinanceBridge, Ownable
 
     function redeem(InitAuthorization calldata init) external
     {
+        require(init.account == msg.sender, "BinanceBridge: not a caller for redeem");
         (bool status, string memory err) = _verify(init);
         require(status == true, err);
 
