@@ -9,12 +9,12 @@
 
 ## Faucet token Kovan
 
-Kovan testnet faucet [link](https://kovan.etherscan.io/address/0xF1d92f1A54865bbc012a6b77C32A94dCcB26eD43#code)
+Kovan testnet faucet [link](https://kovan.etherscan.io/address/0xF1d92f1A54865bbc012a6b77C32A94dCcB26eD43)
 
 
 ## Faucet token Binance Testnet
 
-Binance testnet faucet [link](https://testnet.bscscan.com/address/0x29b610AB8AF49C4Df30882e0Ec01aB11F6051f8f#code)
+Binance testnet faucet [link](https://testnet.bscscan.com/address/0x29b610AB8AF49C4Df30882e0Ec01aB11F6051f8f)
 
 
 - OpenZeppelin library: [link](https://github.com/OpenZeppelin/openzeppelin-contracts)
