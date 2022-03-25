@@ -46,7 +46,7 @@ contract BinanceBridge is IBinanceBridge, Ownable
         (bool status, string memory err) = _verify(init);
         require(status == true, err);
 
-        IERC20(init.tokenA).safeTransfer(msg.sender, init.amount);
+        IERC20(init.tokenB).safeTransfer(msg.sender, init.amount);
     }
 
 
