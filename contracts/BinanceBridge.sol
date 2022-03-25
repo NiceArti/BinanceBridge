@@ -12,6 +12,7 @@ contract BinanceBridge is IBinanceBridge, Ownable
 
     uint256 private immutable _chainID;
     mapping(bytes32 => mapping(address => InitAuthorization)) private _initialization;
+    mapping(bytes32 => bool) private tokensReceived;
     mapping(address => mapping(uint256 => address)) public tokenEquivalent;
 
     constructor()
@@ -84,7 +85,6 @@ contract BinanceBridge is IBinanceBridge, Ownable
 
     function _verify(InitAuthorization calldata init) 
         private
-        pure
         returns(bool, string memory)
     {
         if(init.status != Status.INITIALIZED)
@@ -102,6 +102,8 @@ contract BinanceBridge is IBinanceBridge, Ownable
 
         if(recoveredAddress == address(0) || recoveredAddress != init.account)
             return (false, "BinanceBridge: not a caller");
+        
+        tokensReceived[message] = true;
 
         return (true, "");
     }
