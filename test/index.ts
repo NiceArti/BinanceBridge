@@ -42,11 +42,13 @@ describe("BinanceBridge", function () {
     beforeEach(async () => 
     {
       await token.approve(instance.address, TRANSFER_AMOUNT)
+      await instance.setEquivalent(token.address, token.address, chainID)
     })
 
     it("redeem: Should return tokens when call redeem", async () => 
     {
       let message: ContractTransaction = await instance.swap(token.address, TRANSFER_AMOUNT, 1, chainID)
+      
 
       // create message
       let signature = await helper.createSignature(message, owner)
@@ -56,7 +58,7 @@ describe("BinanceBridge", function () {
       const r = sig.r;
       const s = sig.s;
 
-      let Initialize = helper.Initialize(token.address,token2.address,owner.address,r, s, v)
+      let Initialize = helper.Initialize(token.address,token.address,owner.address,r, s, v)
       let balanceBefore: BigNumber = await token.balanceOf(owner.address)
       await instance.redeem(Initialize)
       let balanceAfter: BigNumber = await token.balanceOf(owner.address)
@@ -76,7 +78,7 @@ describe("BinanceBridge", function () {
       const r = sig.r;
       const s = sig.s;
 
-      let Initialize = helper.Initialize(token.address,token2.address,owner.address,r, s, v)
+      let Initialize = helper.Initialize(token.address,token.address,owner.address,r, s, v)
 
       await instance.redeem(Initialize)
       expect(instance.redeem(Initialize)).to.be.revertedWith("BinanceBridge: not initialized")
@@ -94,7 +96,7 @@ describe("BinanceBridge", function () {
       const r = sig.r;
       const s = sig.s;
 
-      let Initialize = helper.Initialize(token.address,token2.address,owner.address,r, s, v)
+      let Initialize = helper.Initialize(token.address,token.address,owner.address,r, s, v)
 
       expect(instance.connect(acc1).redeem(Initialize)).to.be.revertedWith("BinanceBridge: not a caller")
     })
